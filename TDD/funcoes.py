@@ -9,5 +9,4 @@ def filtrar_por_data(data):
             partes = linha.strip().split(", ")
             if partes[3] == data:
                 resultados.append(linha.strip())
-                print("BURRO")
     return resultados

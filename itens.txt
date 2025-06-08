@@ -1,11 +1,20 @@
 # ID, Nome_Registrador, Item, Data, Local, Tipo
 101, Ana Silva, Chaves, 01/06/2025, Praça Central, perdido
+
 102, Bruno Costa, Celular Samsung, 02/06/2025, Biblioteca, perdido
+
 103, Carla Dias, Carteira Marrom, 03/06/2025, Ponto de Ônibus, perdido
+
 104, Daniel Lima, Óculos de Sol, 04/06/2025, Parque Municipal, perdido
+
 105, Erica Souza, Fone de Ouvido, 05/06/2025, Cafeteria, perdido
+
 106, Ana Silva, Mochila Azul, 01/06/2025, Faculdade, achado
+
 107, Bruno Costa, Livro Harry Potter, 02/06/2025, Parque Municipal, achado
+
 108, Carla Dias, Guarda-chuva, 06/06/2025, Shopping, achado
-109, Daniel Lima, Relógio Prata, 06/06/2025, Academia, achado
+
+109, Daniel Lima, Relógio Prata, 06/06/2025, Biblioteca, achado
 110, Erica Souza, Boné Vermelho, 05/06/2025, Quadra Esportiva, devolvido
+

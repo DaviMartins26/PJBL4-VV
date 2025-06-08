@@ -1,4 +1,34 @@
 #colocar Teste1,2...
+#teste 1
+def carregar_usuarios():
+    usuarios = {}
+    try:
+        with open("usuarios.txt", "r", encoding="utf-8") as arquivo:
+            for linha in arquivo:
+                if linha.strip():
+                    nome, email, senha = linha.strip().split(", ")
+                    usuarios[email] = {"nome": nome, "senha": senha}
+    except FileNotFoundError:
+        pass
+    return usuarios
+
+def login(nome, email, senha):
+    usuarios = carregar_usuarios()
+    if email in usuarios and usuarios[email]["senha"] == senha and usuarios[email]["nome"] == nome:
+        return f"Bem-vindo {nome}"
+    return "Login invalido"
+
+#teste 2
+def salvar_usuario(nome, email, senha):
+    with open("usuarios.txt", "a", encoding="utf-8") as arquivo:
+        arquivo.write(f"{nome}, {email}, {senha}\n")
+
+def cadastrar_usuario(nome, email, senha):
+    usuarios = carregar_usuarios()
+    if email in usuarios:
+        return "Erro: Email ja cadastrado"
+    salvar_usuario(nome, email, senha)
+    return "Usuario cadastrado com sucesso"
 
 
 #Teste 7

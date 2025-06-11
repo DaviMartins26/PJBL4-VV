@@ -11,7 +11,7 @@ from behave import given, when, then
 def step_sistema_pronto(context):
     pass  # Pode implementar preparação do ambiente aqui, se quiser
 
-@when('eu cadastro um item com id "{id}", nome "{nome}", descrição "{descricao}", data "{data}", local "{local}" e status "{status}"')
+@when('cadastro um item com id "{id}", nome "{nome}", descrição "{descricao}", data "{data}", local "{local}" e status "{status}"')
 def step_cadastrar_item(context, id, nome, descricao, data, local, status):
     context.resposta = cadastrar_item_perdido(id, nome, descricao, data, local, status)
 

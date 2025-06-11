@@ -29,7 +29,20 @@ def cadastrar_usuario(nome, email, senha):
         return "Erro: Email ja cadastrado"
     salvar_usuario(nome, email, senha)
     return "Usuario cadastrado com sucesso"
+    
 
+# teste 3
+def cadastrar_item_perdido(id, nome, descricao, data, local, status):
+    with open("itens_perdidos.txt", "a", encoding="utf-8") as arquivo:
+        linha = f"{id}, {nome}, {descricao}, {data}, {local}, {status}\n"
+        arquivo.write(linha)
+    return "Cadastro realizado com sucesso"
+
+# teste 4
+def filtrar_itens_perdidos(itens, filtro):
+    return [item for item in itens
+            if item.get("local") == filtro.get("local") and item.get("status") == filtro.get("status")]
+    
 
 #Teste 7
 def filtrar_por_data(data):

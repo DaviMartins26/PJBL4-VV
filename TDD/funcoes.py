@@ -3,14 +3,19 @@
 def carregar_usuarios():
     usuarios = {}
     try:
-        with open("usuarios.txt", "r", encoding="utf-8") as arquivo:
+        with open("user.txt", "r", encoding="utf-8") as arquivo:
             for linha in arquivo:
-                if linha.strip():
-                    nome, email, senha = linha.strip().split(", ")
-                    usuarios[email] = {"nome": nome, "senha": senha}
+                if linha.strip() and not linha.startswith("#"):
+                    partes = [parte.strip() for parte in linha.strip().split(",")]
+                    if len(partes) >= 4:  # Pula se não tiver ao menos Nome, Email, Senha
+                        nome = partes[1]
+                        email = partes[2]
+                        senha = partes[3]
+                        usuarios[email] = {"nome": nome, "senha": senha}
     except FileNotFoundError:
         pass
     return usuarios
+
 
 def login(nome, email, senha):
     usuarios = carregar_usuarios()
@@ -20,7 +25,7 @@ def login(nome, email, senha):
 
 # Teste 2
 def salvar_usuario(nome, email, senha):
-    with open("usuarios.txt", "a", encoding="utf-8") as arquivo:
+    with open("user.txt", "a", encoding="utf-8") as arquivo:
         arquivo.write(f"{nome}, {email}, {senha}\n")
 
 def cadastrar_usuario(nome, email, senha):
@@ -33,7 +38,7 @@ def cadastrar_usuario(nome, email, senha):
 
 # Teste 3
 def cadastrar_item_perdido(id, nome, descricao, data, local, status):
-    with open("itens_perdidos.txt", "a", encoding="utf-8") as arquivo:
+    with open("itens.txt", "a", encoding="utf-8") as arquivo:
         linha = f"{id}, {nome}, {descricao}, {data}, {local}, {status}\n"
         arquivo.write(linha)
     return "Cadastro realizado com sucesso"

@@ -1,5 +1,5 @@
 #colocar Teste1,2...
-#teste 1
+# Teste 1
 def carregar_usuarios():
     usuarios = {}
     with open("user.txt", "r", encoding="utf-8") as arquivo:
@@ -22,7 +22,7 @@ def login(nome, email, senha):
         return f"Bem-vindo {nome}"
     return "Login invalido"
 
-#teste 2
+# Teste 2
 
 def salvar_usuario(nome, email, senha, cargo="Usuario"):
     with open("user.txt", "r", encoding="utf-8") as arquivo:
@@ -52,21 +52,38 @@ def cadastrar_usuario(nome, email, senha, cargo="Usuario"):
     return "Usuario cadastrado com sucesso"
 
 
-# teste 3
+# Teste 3
 def cadastrar_item_perdido(id, nome, descricao, data, local, status):
-    with open("itens_perdidos.txt", "a", encoding="utf-8") as arquivo:
+    with open("itens.txt", "a", encoding="utf-8") as arquivo:
         linha = f"{id}, {nome}, {descricao}, {data}, {local}, {status}\n"
         arquivo.write(linha)
     return "Cadastro realizado com sucesso"
 
-# teste 4
+# Teste 4
 def filtrar_itens_perdidos(itens, filtro):
     return [item for item in itens
             if item.get("local") == filtro.get("local") and item.get("status") == filtro.get("status")]
 
+# Teste 5
+def cadastrar_item_achado(id, nome_registrador, item, data, local):
+    tipo = "achado"
+    with open("itens.txt", "a", encoding="utf-8") as arquivo:
+        linha = f"{id}, {nome_registrador}, {item}, {data}, {local}, {tipo}\n"
+        arquivo.write(linha)
+    return "Item achado registrado com sucesso"
+
+# Teste 6
+def listar_itens_achados():
+    try:
+        with open("itens.txt", "r", encoding="utf-8") as arquivo:
+            for linha in arquivo:
+                if linha.strip().endswith("achado"):
+                    print(linha.strip())
+    except FileNotFoundError:
+        print("Arquivo 'itens.txt' não encontrado.")
 
 
-#Teste 7
+# Teste 7
 def filtrar_por_data(data):
     resultados = []
     with open("itens.txt", "r", encoding="utf-8") as arquivo:
@@ -77,7 +94,7 @@ def filtrar_por_data(data):
                 resultados.append(", ".join(partes))
     return resultados
 
-#Teste 8
+# Teste 8
 def alterar_local(id_item, novo_local):
     linhas = []
     sucesso = False

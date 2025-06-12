@@ -1,5 +1,6 @@
 # ID, Nome_Registrador, Item, Data, Local, Tipo
 101, Ana Silva, Chaves, 01/06/2025, Novo Local Teste, perdido
+
 102, Bruno Costa, Celular Samsung, 02/06/2025, Biblioteca, perdido
 
 103, Carla Dias, Carteira Marrom, 03/06/2025, Ponto de Ônibus, perdido

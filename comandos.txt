@@ -1,0 +1,8 @@
+utilize o cmd (talvez o diretorio seja diferente)
+1- Va até o diretorio
+cd PycharmProjects\PJBL4-VV
+2-Execute o behave assim
+behave BDD/features
+
+Se quiser rodar apenas 1 arquivo por vez diga ele assim
+behave BDD/features/BDD_test1.feature

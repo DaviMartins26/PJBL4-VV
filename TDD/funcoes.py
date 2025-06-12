@@ -67,11 +67,13 @@ def filtrar_por_data(data):
     resultados = []
     with open("itens.txt", "r", encoding="utf-8") as arquivo:
         for linha in arquivo:
-            if linha.startswith("#"): continue
+            if linha.startswith("#") or linha.strip() == "":
+                continue
             partes = linha.strip().split(", ")
-            if partes[3] == data:
+            if len(partes) >= 6 and partes[3] == data:
                 resultados.append(linha.strip())
     return resultados
+
 
 # Teste 8
 def alterar_local(id_item, novo_local):
@@ -79,11 +81,11 @@ def alterar_local(id_item, novo_local):
     sucesso = False
     with open("itens.txt", "r", encoding="utf-8") as arquivo:
         for linha in arquivo:
-            if linha.startswith("#"):
+            if linha.startswith("#") or linha.strip() == "":
                 linhas.append(linha)
                 continue
             partes = linha.strip().split(", ")
-            if int(partes[0]) == id_item:
+            if len(partes) >= 6 and int(partes[0]) == id_item:
                 partes[4] = novo_local
                 sucesso = True
                 linha = ", ".join(partes)
@@ -92,3 +94,4 @@ def alterar_local(id_item, novo_local):
         with open("itens.txt", "w", encoding="utf-8") as arquivo:
             arquivo.writelines(linhas)
     return sucesso
+

@@ -16,6 +16,7 @@
 108, Carla Dias, Guarda-chuva, 06/06/2025, Shopping, achado
 
 109, Daniel Lima, Relógio Prata, 06/06/2025, Biblioteca, achado
+
 110, Erica Souza, Boné Vermelho, 05/06/2025, Quadra Esportiva, devolvido
 
 201, Joshua, Caderno Preto, 10/06/2025, Sala 101, achado

@@ -1,6 +1,6 @@
 # ID, Nome, Email, Senha, Cargo
-1, Ana Silva, ana.silva@email.com, senha123 , Funcionario
-2, Bruno Costa, bruno.costa@email.com, python456 , Funcionario
+1, Ana Silva, ana.silva@email.com, senha123, Funcionario
+2, Bruno Costa, bruno.costa@email.com, python456, Funcionario
 3, Carla Dias, carla.dias@email.com, devops789, Usuario
-4, Daniel Lima, daniel.lima@email.com, bddtdd!,Usuario
-5, Erica Souza, erica.souza@email.com, jazul123,Usuario
+4, Daniel Lima, daniel.lima@email.com, novaSenha123, Usuario
+5, Erica Souza, erica.souza@email.com, jazul123, Usuario

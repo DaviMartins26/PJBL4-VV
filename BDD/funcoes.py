@@ -112,3 +112,69 @@ def alterar_local(id_item, novo_local):
         with open("itens.txt", "w", encoding="utf-8") as arquivo:
             arquivo.writelines(linhas)
     return sucesso
+
+# Teste 9
+import os
+# Caminho absoluto para o itens.txt dentro de BDD/
+BASE_DIR   = os.path.dirname(__file__)
+ITENS_FILE = os.path.join(BASE_DIR, "itens.txt")
+
+def alterar_tipo_item(id_item, novo_tipo):
+    """
+    Altera o campo 'tipo' de um item no arquivo BDD/itens.txt.
+    Retorna True se encontrou+alterou; False caso contrário.
+    """
+    sucesso = False
+    linhas  = []
+
+    # 1) Lê todo o arquivo correto
+    with open(ITENS_FILE, "r", encoding="utf-8") as f:
+        for linha in f:
+            if linha.startswith("#"):
+                linhas.append(linha)
+                continue
+            partes = linha.strip().split(", ")
+            if partes[0] == str(id_item):
+                partes[5] = novo_tipo
+                sucesso = True
+            linhas.append(", ".join(partes) + "\n")
+
+    # 2) Se alterou, grava de volta
+    if sucesso:
+        with open(ITENS_FILE, "w", encoding="utf-8") as f:
+            f.writelines(linhas)
+
+    return sucesso
+
+# Teste 10
+import os
+# caminho para o user.txt dentro da pasta BDD
+BASE_DIR  = os.path.dirname(__file__)
+USER_FILE = os.path.join(BASE_DIR, "user.txt")
+
+
+def alterar_senha_usuario(email, nova_senha):
+    """
+    Altera a senha do usuário com o email dado em BDD/user.txt.
+    Retorna True se achou+alterou; False caso contrário.
+    """
+    sucesso = False
+    linhas  = []
+
+    # 1) lê todo o arquivo correto
+    with open(USER_FILE, "r", encoding="utf-8") as f:
+        for linha in f:
+            if linha.startswith("#"):
+                linhas.append(linha); continue
+            partes = [p.strip() for p in linha.strip().split(",")]
+            if len(partes) >= 4 and partes[2] == email:
+                partes[3] = nova_senha
+                sucesso   = True
+            linhas.append(", ".join(partes) + "\n")
+
+    # 2) só grava se houve alteração
+    if sucesso:
+        with open(USER_FILE, "w", encoding="utf-8") as f:
+            f.writelines(linhas)
+
+    return sucesso

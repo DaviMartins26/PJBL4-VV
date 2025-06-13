@@ -21,8 +21,8 @@
 
 108, Carla Dias, Guarda-chuva, 06/06/2025, Shopping, achado
 
-
-109, Daniel Lima, Relógio Prata, 06/06/2025, Academia, achado
+# ID, Nome_Registrador, Item, Data, Local, Tipo
+109, Daniel Lima, Relógio Prata, 06/06/2025, Academia, devolvido
 
 110, Erica Souza, Boné Vermelho, 05/06/2025, Quadra Esportiva, devolvido
 
